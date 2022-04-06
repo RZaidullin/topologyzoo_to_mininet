@@ -276,6 +276,12 @@ if __name__=="__main__":
 
     parser.add_argument('--controller', dest='controller_type', help="Default controller is mininet controller, other options: remote,ovscontroller",required=False,type=str,default="controller")
 
+
+    parser.add_argument('--protocols', dest='controller_type', help="Default controller is mininet controller, other options: remote,ovscontroller",required=False,type=str,default="controller")
+    parser.add_argument('--switch', dest='controller_type', help="Default controller is mininet controller, other options: remote,ovscontroller",required=False,type=str,default="controller")
+    parser.add_argument('--', dest='controller_type', help="Default controller is mininet controller, other options: remote,ovscontroller",required=False,type=str,default="controller")
+    parser.add_argument('--controller', dest='controller_type', help="Default controller is mininet controller, other options: remote,ovscontroller",required=False,type=str,default="controller")
+
     args = parser.parse_args()
 
 
@@ -297,3 +303,4 @@ if __name__=="__main__":
 
     tzoo2= TopologyZooXML(os.path.join(tmp_dir,"topologyzoo",args.topo_name+".graphml"))
     m= Mininet(tzoo2.get_topology(),args.controller_ip,args.controller_port,args.controller_type)   
+    
